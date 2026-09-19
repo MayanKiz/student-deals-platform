@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Visitors can manage anonymous marketplace items" ON public.marketplace_items;
