@@ -44,7 +44,6 @@ const sheetVariants = cva(
       },
     },
     defaultVariants: {
-      Sample Message
     },
   },
 );

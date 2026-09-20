@@ -96,9 +96,8 @@ function Calendar({
           "Sample Message",
           defaultClassNames.today,
         ),
-        Sample Message
+        day_range_start:
           "Sample Message",
-          Sample Message
         ),
         disabled: cn("Sample Message", defaultClassNames.disabled),
         hidden: cn("invisible", defaultClassNames.hidden),

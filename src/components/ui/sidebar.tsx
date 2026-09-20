@@ -118,9 +118,9 @@ const SidebarProvider = React.forwardRef<
         isMobile,
         openMobile,
         setOpenMobile,
-        Sample Message
+        toggleSidebar,
       }),
-      Sample Message
+      [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar],
     );
 
     return (
@@ -129,8 +129,7 @@ const SidebarProvider = React.forwardRef<
           <div
             style={
               {
-                Sample Message
-                Sample Message
+                "--sidebar-width": SIDEBAR_WIDTH,
                 ...style,
               } as React.CSSProperties
             }
@@ -175,7 +174,6 @@ const Sidebar = React.forwardRef<
       return (
         <div
           className={cn(
-            Sample Message
             className,
           )}
           ref={ref}
@@ -195,7 +193,7 @@ const Sidebar = React.forwardRef<
             className="w-(--sidebar-width) bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
             style={
               {
-                Sample Message
+                "--sidebar-width": SIDEBAR_WIDTH,
               } as React.CSSProperties
             }
             side={side}
@@ -222,7 +220,6 @@ const Sidebar = React.forwardRef<
         {/* This is what handles the sidebar gap on desktop */}
         <div
           className={cn(
-            Sample Message
             "group-data-[collapsible=offcanvas]:w-0",
             "group-data-[side=right]:rotate-180",
             variant === "floating" || variant === "inset"
@@ -232,7 +229,6 @@ const Sidebar = React.forwardRef<
         />
         <div
           className={cn(
-            Sample Message
             side === "left"
               ? "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
               : "right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
@@ -337,7 +333,6 @@ const SidebarInput = React.forwardRef<
       ref={ref}
       data-sidebar="input"
       className={cn(
-        Sample Message
         className,
       )}
       {...props}
@@ -431,7 +426,6 @@ const SidebarGroupLabel = React.forwardRef<
       ref={ref}
       data-sidebar="group-label"
       className={cn(
-        Sample Message
         "group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0",
         className,
       )}
@@ -452,7 +446,6 @@ const SidebarGroupAction = React.forwardRef<
       ref={ref}
       data-sidebar="group-action"
       className={cn(
-        Sample Message
         // Increases the hit area of the button on mobile.
         "after:absolute after:-inset-2 after:md:hidden",
         "group-data-[collapsible=icon]:hidden",
@@ -505,9 +498,9 @@ const sidebarMenuButtonVariants = cva(
   {
     variants: {
       variant: {
-        Sample Message
+        default: "bg-sidebar-accent text-sidebar-accent-foreground",
         outline:
-          Sample Message
+          "bg-transparent shadow-[inset_0_0_0_1px_hsl(var(--sidebar-border))] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
       },
       size: {
         default: "h-8 text-sm",
@@ -595,7 +588,6 @@ const SidebarMenuAction = React.forwardRef<
       ref={ref}
       data-sidebar="menu-action"
       className={cn(
-        Sample Message
         // Increases the hit area of the button on mobile.
         "after:absolute after:-inset-2 after:md:hidden",
         "peer-data-[size=sm]/menu-button:top-1",
@@ -618,7 +610,6 @@ const SidebarMenuBadge = React.forwardRef<HTMLDivElement, React.ComponentProps<"
       ref={ref}
       data-sidebar="menu-badge"
       className={cn(
-        Sample Message
         "peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[active=true]/menu-button:text-sidebar-accent-foreground",
         "peer-data-[size=sm]/menu-button:top-1",
         "peer-data-[size=default]/menu-button:top-1.5",
@@ -671,7 +662,6 @@ const SidebarMenuSub = React.forwardRef<HTMLUListElement, React.ComponentProps<"
       ref={ref}
       data-sidebar="menu-sub"
       className={cn(
-        Sample Message
         "group-data-[collapsible=icon]:hidden",
         className,
       )}
@@ -703,7 +693,6 @@ const SidebarMenuSubButton = React.forwardRef<
       data-size={size}
       data-active={isActive}
       className={cn(
-        Sample Message
         "data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground",
         size === "sm" && "text-xs",
         size === "md" && "text-sm",
@@ -717,28 +706,27 @@ const SidebarMenuSubButton = React.forwardRef<
 SidebarMenuSubButton.displayName = "SidebarMenuSubButton";
 
 export {
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
-  Sample Message
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupAction,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSkeleton,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarProvider,
+  SidebarRail,
+  SidebarSeparator,
+  SidebarTrigger,
 };

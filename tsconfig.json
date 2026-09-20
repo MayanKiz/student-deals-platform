@@ -19,7 +19,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    Sample Message
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
